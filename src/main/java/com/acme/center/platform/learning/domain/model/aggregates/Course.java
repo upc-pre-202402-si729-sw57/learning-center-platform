@@ -12,7 +12,7 @@ import org.apache.logging.log4j.util.Strings;
 public class Course extends AuditableAbstractAggregateRoot<Course> {
     private String title;
     private String description;
-    
+
     @Embedded
     private LearningPath learningPath;
 
