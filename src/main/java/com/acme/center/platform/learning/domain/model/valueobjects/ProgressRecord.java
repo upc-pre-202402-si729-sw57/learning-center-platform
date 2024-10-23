@@ -83,9 +83,13 @@ public class ProgressRecord {
         if(Objects.isNull(progressRecordItem)) throw new IllegalArgumentException("Tutorial not found in progress record");
         if(progressRecordItem.isInProgress()) progressRecordItem.complete();
         if(learningPath.isLastTutorialInLearningPath(tutorialId)) return;
-        // TODO: Implement logic to start the next tutorial in the learning path.
-        //  It needs getNextTutorialIdInLearningPath() method in LearningPath class
-
+        Long nextTutorialId = learningPath.getNextTutorialIdInLearningPath(tutorialId);
+        if(Objects.isNull(nextTutorialId)) return;
+        ProgressRecordItem nextProgressRecordItem = getProgressRecordItemWithTutorialId(nextTutorialId);
+        if(Objects.isNull(nextProgressRecordItem)) {
+            nextProgressRecordItem = new ProgressRecordItem(progressRecordItem.getEnrollment(), nextTutorialId);
+            this.progressRecordItems.add(nextProgressRecordItem);
+        }
     }
 
     /**
