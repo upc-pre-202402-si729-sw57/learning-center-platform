@@ -8,6 +8,7 @@ import jakarta.persistence.OneToMany;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * LearningPath is a value object that represents the learning path of a course.
@@ -113,6 +114,16 @@ public class LearningPath {
                 .filter(item -> item.getId().equals(itemId))
                 .findFirst()
                 .orElse(null);
+    }
+
+    /**
+     * Get the next tutorial id in the learning path
+     * @param currentTutorialId The id of the current tutorial
+     * @return The next tutorial id
+     */
+    public Long getNextTutorialIdInLearningPath(Long currentTutorialId) {
+        LearningPathItem currentLearningPathItem = getLearningPathItemWithTutorialId(currentTutorialId);
+        return Objects.isNull(currentLearningPathItem) ? null : currentLearningPathItem.getNextItem().getTutorialId();
     }
 
     /**
