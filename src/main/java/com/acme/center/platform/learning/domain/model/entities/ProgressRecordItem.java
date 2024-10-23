@@ -82,7 +82,7 @@ public class ProgressRecordItem extends AuditableModel {
      * Checks if the progress record item is in progress
      * @return true if the progress record item is in progress, false otherwise
      */
-    public boolean IsInProgress() {
+    public boolean isInProgress() {
         return ProgressStatus.STARTED.equals(status);
     }
 
