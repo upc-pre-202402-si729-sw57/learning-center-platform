@@ -1,5 +1,6 @@
 package com.acme.center.platform.learning.domain.model.aggregates;
 
+import com.acme.center.platform.learning.domain.model.commands.RequestEnrollmentCommand;
 import com.acme.center.platform.learning.domain.model.valueobjects.AcmeStudentRecordId;
 import com.acme.center.platform.learning.domain.model.valueobjects.EnrollmentStatus;
 import com.acme.center.platform.shared.domain.model.aggregates.AuditableAbstractAggregateRoot;
@@ -34,6 +35,12 @@ public class Enrollment extends AuditableAbstractAggregateRoot<Enrollment> {
 
     public Enrollment() {
         // Required by JPA
+    }
+
+    public Enrollment(RequestEnrollmentCommand command, Course course) {
+        super();
+        this.acmeStudentRecordId = command.studentRecordId();
+        this.course = course;
     }
 
     public void confirm() {
