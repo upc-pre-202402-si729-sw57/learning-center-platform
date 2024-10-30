@@ -1,7 +1,10 @@
 package com.acme.center.platform.learning.domain.services;
 
 import com.acme.center.platform.learning.domain.model.aggregates.Course;
-import com.acme.center.platform.learning.domain.model.commands.*;
+import com.acme.center.platform.learning.domain.model.commands.AddTutorialToCourseLearningPathCommand;
+import com.acme.center.platform.learning.domain.model.commands.CreateCourseCommand;
+import com.acme.center.platform.learning.domain.model.commands.DeleteCourseCommand;
+import com.acme.center.platform.learning.domain.model.commands.UpdateCourseCommand;
 
 import java.util.Optional;
 

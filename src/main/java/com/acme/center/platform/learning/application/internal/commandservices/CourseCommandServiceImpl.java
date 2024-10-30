@@ -1,7 +1,10 @@
 package com.acme.center.platform.learning.application.internal.commandservices;
 
 import com.acme.center.platform.learning.domain.model.aggregates.Course;
-import com.acme.center.platform.learning.domain.model.commands.*;
+import com.acme.center.platform.learning.domain.model.commands.AddTutorialToCourseLearningPathCommand;
+import com.acme.center.platform.learning.domain.model.commands.CreateCourseCommand;
+import com.acme.center.platform.learning.domain.model.commands.DeleteCourseCommand;
+import com.acme.center.platform.learning.domain.model.commands.UpdateCourseCommand;
 import com.acme.center.platform.learning.domain.services.CourseCommandService;
 import com.acme.center.platform.learning.infrastructure.persistence.jpa.repositories.CourseRepository;
 import org.springframework.stereotype.Service;
