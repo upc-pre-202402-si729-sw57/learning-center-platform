@@ -67,7 +67,7 @@ public class Student extends AuditableAbstractAggregateRoot<Student> {
      * Update student metrics when a tutorial is completed.
      */
     public void updateMetricsOnTutorialCompleted() {
-        this.performanceMetricSet.incrementTotalTutorials();
+        this.performanceMetricSet.incrementTotalCompletedTutorials();
     }
 
     /**
@@ -98,7 +98,7 @@ public class Student extends AuditableAbstractAggregateRoot<Student> {
      * Get total tutorials.
      * @return Total tutorials.
      */
-    public int getTotalTutorials() {
-        return this.performanceMetricSet.totalTutorials();
+    public int getTotalCompletedTutorials() {
+        return this.performanceMetricSet.totalCompletedTutorials();
     }
 }
