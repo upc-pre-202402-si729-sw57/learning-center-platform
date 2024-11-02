@@ -41,6 +41,7 @@ public class Enrollment extends AuditableAbstractAggregateRoot<Enrollment> {
         super();
         this.acmeStudentRecordId = command.studentRecordId();
         this.course = course;
+        this.status = EnrollmentStatus.REQUESTED;
     }
 
     public void confirm() {
