@@ -12,6 +12,8 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -59,7 +61,7 @@ public class StudentsController {
         if (student.isEmpty()) return ResponseEntity.notFound().build();
         var createdStudent = student.get();
         var studentResource = StudentResourceFromEntityAssembler.toResourceFromEntity(createdStudent);
-        return ResponseEntity.ok(studentResource);
+        return new ResponseEntity<>(studentResource, HttpStatus.CREATED);
     }
 
     /**
