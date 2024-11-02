@@ -12,6 +12,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -54,7 +55,7 @@ public class ProfilesController {
         if (profile.isEmpty()) return ResponseEntity.badRequest().build();
         var createdProfile = profile.get();
         var profileResource = ProfileResourceFromEntityAssembler.toResourceFromEntity(createdProfile);
-        return ResponseEntity.ok(profileResource);
+        return new ResponseEntity<>(profileResource, HttpStatus.CREATED);
     }
 
     /**
