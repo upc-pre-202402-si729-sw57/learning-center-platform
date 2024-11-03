@@ -23,6 +23,12 @@ import java.util.List;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
+/**
+ * CoursesController
+ * <p>
+ *     All course related endpoints.
+ * </p>
+ */
 @RestController
 @RequestMapping(value = "/api/v1/courses", produces = APPLICATION_JSON_VALUE)
 @Tag(name = "Courses", description = "Available Course Endpoints")
@@ -31,6 +37,12 @@ public class CoursesController {
     private final CourseQueryService courseQueryService;
 
 
+    /**
+     * Constructor
+     *
+     * @param courseCommandService The {@link CourseCommandService} instance
+     * @param courseQueryService   The {@link CourseQueryService} instance
+     */
     public CoursesController(CourseCommandService courseCommandService, CourseQueryService courseQueryService) {
         this.courseCommandService = courseCommandService;
         this.courseQueryService = courseQueryService;

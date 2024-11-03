@@ -11,14 +11,29 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+/**
+ * Implementation of CourseCommandService
+ *
+ * <p>
+ *     This class is the implementation of the CourseCommandService interface.
+ *     It is used by the LearningContext to handle commands on the Course aggregate.
+ * </p>
+ *
+ */
 @Service
 public class CourseCommandServiceImpl implements CourseCommandService {
     private final CourseRepository courseRepository;
 
+    /**
+     * Constructor
+     *
+     * @param courseRepository the {@link CourseRepository} instance
+     */
     public CourseCommandServiceImpl(CourseRepository courseRepository) {
         this.courseRepository = courseRepository;
     }
 
+    // inherit javadoc
     @Override
     public Long handle(CreateCourseCommand command) {
         if (courseRepository.existsByTitle(command.title()))
