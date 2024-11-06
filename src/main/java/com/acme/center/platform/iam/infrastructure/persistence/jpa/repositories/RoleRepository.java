@@ -1,6 +1,7 @@
 package com.acme.center.platform.iam.infrastructure.persistence.jpa.repositories;
 
 import com.acme.center.platform.iam.domain.model.entities.Role;
+import com.acme.center.platform.iam.domain.model.valueobjects.Roles;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -21,7 +22,7 @@ public interface RoleRepository extends JpaRepository<Role, Long> {
      * @param name the name of the role to find.
      * @return an optional containing the role if it exists, an empty optional otherwise.
      */
-    Optional<Role> findByName(String name);
+    Optional<Role> findByName(Roles name);
 
     /**
      * Check if a role with a given name exists.
