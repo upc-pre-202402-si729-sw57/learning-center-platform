@@ -23,8 +23,9 @@ public class Role {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+
     @Enumerated(EnumType.STRING)
-    @Column(length = 20)
+    @Column(length = 20, unique = true)
     private Roles name;
 
     /**

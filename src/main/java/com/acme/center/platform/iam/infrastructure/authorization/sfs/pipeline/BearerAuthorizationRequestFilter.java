@@ -27,8 +27,8 @@ import java.util.Objects;
  *     The user authentication will be set with the user details from the token.
  * </p>
  */
-public class BearerAuthenticationRequestFilter extends OncePerRequestFilter {
-    private static final Logger LOGGER = LoggerFactory.getLogger(BearerAuthenticationRequestFilter.class);
+public class BearerAuthorizationRequestFilter extends OncePerRequestFilter {
+    private static final Logger LOGGER = LoggerFactory.getLogger(BearerAuthorizationRequestFilter.class);
     private final BearerTokenService tokenService;
     @Qualifier("defaultUserDetailsService")
     private final UserDetailsService userDetailsService;
@@ -38,7 +38,7 @@ public class BearerAuthenticationRequestFilter extends OncePerRequestFilter {
      * @param tokenService {@link BearerTokenService} Bearer token service
      * @param userDetailsService {@link UserDetailsService} User details service
      */
-    public BearerAuthenticationRequestFilter(BearerTokenService tokenService, UserDetailsService userDetailsService) {
+    public BearerAuthorizationRequestFilter(BearerTokenService tokenService, UserDetailsService userDetailsService) {
         this.tokenService = tokenService;
         this.userDetailsService = userDetailsService;
     }

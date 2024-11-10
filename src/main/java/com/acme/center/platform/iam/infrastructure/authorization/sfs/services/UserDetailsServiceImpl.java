@@ -5,10 +5,12 @@ import com.acme.center.platform.iam.infrastructure.persistence.jpa.repositories.
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
 /**
  * User details service implementation
  */
+@Service(value = "defaultUserDetailsService")
 public class UserDetailsServiceImpl implements UserDetailsService {
     private final UserRepository userRepository;
 
