@@ -10,9 +10,9 @@
     </parent>
     <groupId>com.acme.center</groupId>
     <artifactId>platform</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>learning-center-platform</name>
-    <description>learning-center-platform</description>
+    <version>1.0.0</version>
+    <name>ACME Learning Center Platform</name>
+    <description>ACME Learning Center Platform for Education Services</description>
     <url/>
     <licenses>
         <license/>
